@@ -1,0 +1,150 @@
+//This is how I set this project for all the graph theory
+//lab and lectures
+
+//Ian Labs and lectures
+
+
+
+CREATE(gt:Module{name:"Graph_Theory"})
+
+CREATE(IM:Lecturer{name:"Ian McLoughlin"})
+
+CREATE(R0145:Room {name:"Room_0145"})
+CREATE(R0379:Room {name:"Room_0379"})
+CREATE(R0162:Room {name:"Room_0162"})
+CREATE(R0938:Room {name:"Room_0938"})
+CREATE(R0208:Room {name:"Room_0208"})
+
+CREATE(egt:Event)
+CREATE
+(egt)-[:Happenining {start:900,finish:1000,day:"Monday"}]->(R0145),
+(egt)-[:EventType {type: "lab", group: "A"}]->(graph_theory),
+(egt)-[:Happenining {start:900,finish:1000,day:"Tuesday"}]->(R0379),
+(egt)-[:EventType {type: "lab", group: "B"}]->(graph_theory),
+(egt)-[:Happenining {start:900,finish:1000,day:"Wednesday"}]->(R0162),
+(egt)-[:EventType {type: "lab", group: "C"}]->(graph_theory),
+(egt)-[:Happenining {start:1000,finish:1100,day:"Wednesday"}]->(R0938),
+(egt)-[:EventType {type: "lecture", allGroup: "A,B,C"}]->(gt),
+(egt)-[:Happenining {start:11,finish:12,day:"Friday"}]->(R0208),
+(egt)-[:EventType {type: "lecture", allGroup: "A,B,C"}]->(gt),
+(IM)-[:Lecturing ]->(egt)
+
+
+//This is how I set this project for all the Software_Testing
+//lab and lectures
+
+//Martins Labs and lectures
+
+CREATE(st:Module{name:"Software_Testing"})
+
+CREATE(MH:Lecturer{name:"Martin Hynes"})
+
+CREATE(Rcr4:Room {name:"Room_cr4"})
+CREATE(Rcr5:Room {name:"Room_cr5"})
+CREATE(R0939:Room {name:"Room_0939"})
+
+CREATE(est:Event)
+CREATE
+(est)-[:Happenining {start:1600,finish:1800,day:"Monday"}]->(Rcr4),
+(est)-[:EventType {type: "lab", group: "A"}]->(st),
+(est)-[:Happenining {start:900,finish:1100,day:"Tuesday"}]->(Rcr5),
+(est)-[:EventType {type: "lab", group: "C"}]->(st),
+(est)-[:Happenining {start:1400,finish:1600,day:"Tuesday"}]->(Rcr5),
+(est)-[:EventType {type: "lab", group: "B"}]->(st),
+(est)-[:Happenining {start:1500,finish:1600,day:"Wednesday"}]->(R0939),
+(est)-[:EventType {type: "lecture", allGroup: "A,B,C"}]->(st),
+(MH)-[:Lecturing ]->(est)
+
+
+
+//This is how I set this project for all the Database
+//lab and lectures
+
+
+//Deirdre ODonovan's lecture
+
+CREATE(db:Module{name:"Database"})
+
+CREATE(DO:Lecturer{name:"Deirdre ODonovan"})
+
+CREATE(R0994:Room {name:"Room_0994"})
+CREATE(Rcr4:Room {name:"Room_cr4"})
+CREATE(R0995:Room {name:"Room_0995"})
+CREATE(Rcr2:Room {name:"Room_cr2"})
+CREATE(Rcr3:Room {name:"Room_cr3"})
+
+CREATE(e:Event)
+CREATE
+(edb)-[:Happenining {start:1000,finish:1100,day:"Monday"}]->(R0994),
+(edb)-[:EventType {type: "Lecture", allGroup: "A,B,C"}]->(db),
+(edb)-[:Happenining {start:900,finish:1100,day:"Tuesday"}]->(Rcr4),
+(edb)-[:EventType {type: "Lab", group: "A"}]->(db),
+(edb)-[:Happenining {start:1600,finish:1700,day:"Wednesday"}]->(R0995),
+(edb)-[:EventType {type: "Lecture", allGroup: "A,B,C"}]->(db),
+(edb)-[:Happenining {start:1500,finish:1700,day:"Thursday"}]->(Rcr2),
+(edb)-[:EventType {type: "Lab", group: "C"}]->(db),
+(edb)-[:Happenining {start:900,finish:1100,day:"Friday"}]->(Rcr2),
+(edb)-[:EventType {type: "Lab", group: "B"}]->(db),
+(DO)-[:Lecturing ]->(edb)
+
+
+//This is how I set this project for all the Mobile_Application2
+//lab and lectures
+
+//Damien Costello's labs and lectures
+
+
+
+CREATE(ma:Module{name:"Mobile_Application2"})
+CREATE(pp:Module{name:"Proffessional_Practice"})
+
+CREATE(DC:Lecturer{name:"Damien Costello"})
+
+CREATE(R0223:Room {name:"Room_0223"})
+CREATE(R0470:Room {name:"Room_0470"})
+CREATE(Rpf18:Room {name:"Room_pf18"})
+CREATE(R0208:Room {name:"Room_0208"})
+
+CREATE(ema:Event)
+CREATE(epp:Event)
+CREATE
+(ema)-[:Happenining {start:1200,finish:1400,day:"Monday"}]->(R223),
+(ema)-[:EventType {type: "lacture", allGroup: "A,B,C"}]->(ma),
+(ema)-[:Happenining {start:1100,finish:1300,day:"Tuesday"}]->(R0470),
+(ema)-[:EventType {type: "lab", Group: "A"}]->(ma),
+(ema)-[:Happenining {start:900,finish:1100,day:"Thursday"}]->(Rpf18),
+(ema)-[:EventType {type: "lab", Group: "B"}]->(ma),
+(ema)-[:Happenining {start:1100,finish:1300,day:"Thursday"}]->(Rpf18),
+(ema)-[:EventType {type: "lab", Group: "C"}]->(ma),
+(epp)-[:Happenining {start:1100,finish:1200,day:"Wednesday"}]->(R0208),
+(epp)-[:EventType {type: "lecture", allGroup: "A,B,C"}]->(pp),
+(DC)-[:Lecturing ]->(ema)
+
+
+
+//This is how I set this project for all the Server_side_RAD
+//lab and lectures
+
+//Gerard Harrison's lab and lacture
+
+
+
+CREATE(ssr:Module{name:"Server_side_RAD"})
+
+CREATE(GH:Lecturer{name:"Gerard Harrison"})
+
+CREATE(Rcr5:Room {name:"Room_cr5"})
+CREATE(R0997:Room {name:"Room_0997"})
+
+CREATE(essr:Event)
+CREATE
+(essr)-[:Happenining {start:1600,finish:1800,day:"Monday"}]->(Rcr5),
+(essr)-[:EventType {type: "lab", group: "C"}]->(ssr),
+(essr)-[:Happenining {start:1600,finish:1800,day:"Tuesday"}]->(Rcr5),
+(essr)-[:EventType {type: "lab", group: "B"}]->(ssr),
+(essr)-[:Happenining {start:1300,finish:1400,day:"Wednesday"}]->(R0997),
+(essr)-[:EventType {type: "lecture", allGroup: "A,B,C"}]->(ssr),
+(essr)-[:Happenining {start:1400,finish:1600,day:"Thursday"}]->(Rcr5),
+(essr)-[:EventType {type: "lab", group: "A"}]->(ssr),
+(GH)-[:Lecturing ]->(essr)
+
